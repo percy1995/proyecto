@@ -1,0 +1,36 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "Chat.Map"
+    },
+    "cordova-plugin-filechooser": {
+      "PACKAGE_NAME": "Chat.Map"
+    },
+    "cordova-plugin-filepath": {
+      "PACKAGE_NAME": "Chat.Map"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "Chat.Map"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "Chat.Map"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "Chat.Map"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "Chat.Map"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "Chat.Map"
+    }
+  },
+  "dependent_plugins": {}
+}

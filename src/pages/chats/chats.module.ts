@@ -9,5 +9,8 @@ import { ChatsPage } from './chats';
   imports: [
     IonicPageModule.forChild(ChatsPage),
   ],
+  exports: [
+    ChatsPage
+  ]
 })
 export class ChatsPageModule {}

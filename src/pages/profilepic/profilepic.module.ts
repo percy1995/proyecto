@@ -9,5 +9,8 @@ import { ProfilepicPage } from './profilepic';
   imports: [
     IonicPageModule.forChild(ProfilepicPage),
   ],
+  exports: [
+    ProfilepicPage
+  ]
 })
 export class ProfilepicPageModule {}

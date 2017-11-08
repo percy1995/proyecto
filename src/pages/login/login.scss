@@ -1,3 +1,4 @@
+page-login {
 .background {
     background-image: url('../assets/imgs/2.jpg');
 }
@@ -17,20 +18,20 @@ a, p,
 ion-card-header.card-header {
     color: #fff!important;
 }
- 
+
 .list > .item-block:first-child {
     border: medium none;
 }
- 
+
 .item {
     margin-bottom: 10px;
     background: rgba(255, 255, 255, 0.5);
     border: medium none;
- 
+
     .text-input, {
         color: #fff;
     }
- 
+
     
     input::-moz-placeholder{
         color: #fff!important;
@@ -47,18 +48,20 @@ ion-card-header.card-header {
     *::-webkit-input-placeholder{
         color: #fff!important;
     }
- 
+
 }
- 
+
 .icon {
     padding-right: 10px;
 }
- 
+
 .bottom {
     bottom: 0;
 }
- 
+
 .input-cover {
-position: static;
+position: sticky;
 }
- 
+
+}
+

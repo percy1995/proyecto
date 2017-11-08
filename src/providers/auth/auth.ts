@@ -1,22 +1,20 @@
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { usercreds } from '../../modulos/interfaces/usercreds';
+import { usercreds } from '../../models/interfaces/usercreds';
 
 /*
   Generated class for the AuthProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
+  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
+  for more info on providers and Angular 2 DI.
 */
 @Injectable()
 export class AuthProvider {
   
   constructor(public afireauth: AngularFireAuth) {
- 
+
   }
- 
+
 /*
     For logging in a particular user. Called from the login.ts file.
   
@@ -30,9 +28,9 @@ export class AuthProvider {
         reject(err);
        })
     })
- 
+
     return promise;
     
   }
- 
+
 }

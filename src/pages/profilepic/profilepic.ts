@@ -15,17 +15,18 @@ import { UserProvider } from '../../providers/user/user';
 })
 export class ProfilepicPage {
   imgurl = 'https://firebasestorage.googleapis.com/v0/b/myapp-4eadd.appspot.com/o/chatterplace.png?alt=media&token=e51fa887-bfc6-48ff-87c6-e2c61976534e';
-  moveon = true;
+  moveon: boolean = true;
   constructor(public navCtrl: NavController, public navParams: NavParams, public imgservice: ImghandlerProvider,
     public zone: NgZone, public userservice: UserProvider, public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
+    // console.log('ionViewDidLoad ProfilepicPage');
   }
 
   chooseimage() {
     let loader = this.loadingCtrl.create({
-      content: '  Espere Porfavor'
+      content: 'Please wait'
     })
     loader.present();
     this.imgservice.uploadimage().then((uploadedurl: any) => {
@@ -39,7 +40,7 @@ export class ProfilepicPage {
 
   updateproceed() {
     let loader = this.loadingCtrl.create({
-      content: 'Espere Porfavor'
+      content: 'Please wait'
     })
     loader.present();
     this.userservice.updateimage(this.imgurl).then((res: any) => {

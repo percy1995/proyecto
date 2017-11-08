@@ -9,5 +9,8 @@ import { PasswordresetPage } from './passwordreset';
   imports: [
     IonicPageModule.forChild(PasswordresetPage),
   ],
+  exports: [
+    PasswordresetPage
+  ]
 })
 export class PasswordresetPageModule {}

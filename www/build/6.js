@@ -1,6 +1,6 @@
 webpackJsonp([6],{
 
-/***/ 464:
+/***/ 462:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(479);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(477);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -41,7 +41,7 @@ LoginPageModule = __decorate([
 
 /***/ }),
 
-/***/ 479:
+/***/ 477:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -96,7 +96,7 @@ var LoginPage = (function () {
 }());
 LoginPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"C:\proyecto\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="background">\n\n  <ion-card>\n\n    <ion-card-header>\n\n      Login\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-list no-lines>\n\n        <div class="spacer" style="height: 10px;"></div>\n\n        <ion-item>\n\n          <ion-input type="email" placeholder="Email" [(ngModel)]="credentials.email"></ion-input>\n\n        </ion-item>\n\n        <div class="spacer" style="height: 5px;"></div>\n\n        <ion-item>\n\n          <ion-input type="password" placeholder="Password" [(ngModel)]="credentials.password"></ion-input>\n\n        </ion-item>\n\n        <div class="spacer" style="height: 10px;"></div>\n\n        <a (click)="passwordreset()">Forgot login details ? <b> Get Help </b></a>\n\n        <div class="spacer" style="height: 10px;"></div>\n\n        <button ion-button block round outline color="light" (click)="signin()">Login</button>\n\n        <div class="spacer" style="height: 10px;"></div>\n\n        <p>OR</p>\n\n        <div class="spacer" style="height: 10px;"></div>\n\n        <button ion-button clear full color="light" (click)="signup()">Don\'t have an account? Sign up</button>\n\n      </ion-list>\n\n    </ion-card-content>\n\n  </ion-card>\n\n  \n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\proyecto\src\pages\login\login.html"*/,
+        selector: 'page-login',template:/*ion-inline-start:"C:\proyecto\src\pages\login\login.html"*/'<ion-header>\n</ion-header>\n<ion-content class="background">\n  <ion-card>\n    <ion-card-header>\n     <h1> Iniciar Sesion</h1>\n    </ion-card-header>\n    <ion-card-content>\n      <ion-list no-lines>\n        <div class="spacer" style="height: 10px;"></div>\n        <ion-item>\n          <ion-input type="email" placeholder="Email" [(ngModel)]="credentials.email"></ion-input>\n        </ion-item>\n        <div class="spacer" style="height: 5px;"></div>\n        <ion-item>\n          <ion-input type="password" placeholder="Password" [(ngModel)]="credentials.password"></ion-input>\n        </ion-item>\n        <div class="spacer" style="height: 10px;"></div>\n        <a (click)="passwordreset()">Olvidó los detalles de Inicio de Sesion? <br><b> Consigue ayuda</b></a>\n        <div class="spacer" style="height: 10px;"></div>\n        <button ion-button block round outline color="light" (click)="signin()">Login</button>\n        <div class="spacer" style="height: 10px;"></div>\n        <br><p>O</p>\n        <div class="spacer" style="height: 10px;"></div>\n        <button ion-button clear full color="light" (click)="signup()">No tienes una cuenta? <br>Regístrate</button>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n  \n\n</ion-content>\n'/*ion-inline-end:"C:\proyecto\src\pages\login\login.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */]])
 ], LoginPage);

@@ -71,12 +71,12 @@ export class RequestsProvider {
           resolve(true);
         })
         
-        }).then((err) => {
+        })/*.catch((err) => {
           reject(err);
-         })
-        }).then((err) => {
+         })*/
+        })/*.catch((err) => {
           reject(err);
-      })
+      })*/
     })
     return promise;
   }
@@ -93,7 +93,7 @@ export class RequestsProvider {
          })
           .then(() => {
           
-        }).then((err) => {
+        }).catch((err) => {
           reject(err);
         })
     })
@@ -117,7 +117,7 @@ export class RequestsProvider {
             }
           }
         this.events.publish('friends');
-      }).then((err) => {
+      }).catch((err) => {
         alert(err);
       })
     

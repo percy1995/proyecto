@@ -35,9 +35,10 @@ export class ChatProvider {
             timestamp: firebase.database.ServerValue.TIMESTAMP
           }).then(() => {
             resolve(true);
-            }).then((err) => {
+            })
+            /*.catch((err) => {
               reject(err);
-          })
+          })*/
         })
       })
       return promise;

@@ -1,6 +1,6 @@
 webpackJsonp([9],{
 
-/***/ 458:
+/***/ 457:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroupinfoPageModule", function() { return GroupinfoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__groupinfo__ = __webpack_require__(473);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__groupinfo__ = __webpack_require__(472);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -41,7 +41,7 @@ GroupinfoPageModule = __decorate([
 
 /***/ }),
 
-/***/ 473:
+/***/ 472:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -94,7 +94,7 @@ var GroupinfoPage = (function () {
 }());
 GroupinfoPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-groupinfo',template:/*ion-inline-start:"C:\proyecto\src\pages\groupinfo\groupinfo.html"*/'<!--\n\n  Generated template for the GroupinfoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="hcolor">\n\n    <ion-title>Group Info</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n  <ion-list no-lines>\n\n    <ion-list-header>\n\n      Group Members\n\n    </ion-list-header>\n\n    <ion-item *ngFor="let item of groupmembers">\n\n      <ion-avatar item-left>\n\n        <img src="{{item.photoURL}}">\n\n      </ion-avatar>\n\n      <h2>{{item.displayName}}</h2>\n\n      <p>Member</p>\n\n    </ion-item>\n\n  </ion-list>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\proyecto\src\pages\groupinfo\groupinfo.html"*/,
+        selector: 'page-groupinfo',template:/*ion-inline-start:"C:\proyecto\src\pages\groupinfo\groupinfo.html"*/'<!--\n  Generated template for the GroupinfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="hcolor">\n    <ion-title>Informacion del Grupo</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n  <ion-list no-lines>\n    <ion-list-header>\n      Miembros del Grupo\n    </ion-list-header>\n    <ion-item *ngFor="let item of groupmembers">\n      <ion-avatar item-left>\n        <img src="{{item.photoURL}}">\n      </ion-avatar>\n      <h2>{{item.displayName}}</h2>\n      <p>Miembros</p>\n    </ion-item>\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"C:\proyecto\src\pages\groupinfo\groupinfo.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_groups_groups__["a" /* GroupsProvider */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]])

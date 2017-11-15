@@ -43,7 +43,7 @@ export class ProfilePage {
       this.userservice.updateimage(url).then((res: any) => {
         if (res.success) {
           statusalert.setTitle('Updated');
-          statusalert.setSubTitle('Your profile pic has been changed successfully!!');
+          statusalert.setSubTitle('tu perfil ha sido cambiado!!');
           statusalert.present();
           this.zone.run(() => {
           this.avatar = url;

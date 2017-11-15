@@ -88,31 +88,31 @@ export class GroupchatPage {
 
   presentOwnerSheet() {
     let sheet = this.actionSheet.create({
-      title: 'Group Actions',
+      title: 'Opciones de Grupo',
       buttons: [
         {
-          text: 'Add member',
+          text: 'Agregar Usuario',
           icon: 'person-add',
           handler: () => {
             this.navCtrl.push('GroupbuddiesPage');
           }
         },
         {
-          text: 'Remove member',
+          text: 'Eliminar Miembro',
           icon: 'remove-circle',
           handler: () => {
             this.navCtrl.push('GroupmembersPage');
           }
         },
         {
-          text: 'Group Info',
+          text: 'Informacion De Grupo',
           icon: 'person',
           handler: () => {
             this.navCtrl.push('GroupinfoPage', {groupName: this.groupName});
           }
         },
         {
-          text: 'Delete Group',
+          text: 'Eliminar Grupo',
           icon: 'trash',
           handler: () => {
             this.groupservice.deletegroup().then(() => {
@@ -123,9 +123,9 @@ export class GroupchatPage {
           }
         },
         {
-          text: 'Cancel',
-          role: 'cancel',
-          icon: 'cancel',
+          text: 'Cancelar',
+          role: 'cancelar',
+          icon: 'cancelar',
           handler: () => {
             console.log('Cancelled');
           }
@@ -137,7 +137,7 @@ export class GroupchatPage {
 
   presentMemberSheet() {
     let sheet = this.actionSheet.create({
-      title: 'Group Actions',
+      title: 'Opciones De Grupo',
       buttons: [
         {
           text: 'Leave Group',

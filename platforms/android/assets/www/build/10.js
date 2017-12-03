@@ -140,31 +140,31 @@ var GroupchatPage = (function () {
     GroupchatPage.prototype.presentOwnerSheet = function () {
         var _this = this;
         var sheet = this.actionSheet.create({
-            title: 'Group Actions',
+            title: 'Opciones de Grupo',
             buttons: [
                 {
-                    text: 'Add member',
+                    text: 'Agregar Usuario',
                     icon: 'person-add',
                     handler: function () {
                         _this.navCtrl.push('GroupbuddiesPage');
                     }
                 },
                 {
-                    text: 'Remove member',
+                    text: 'Eliminar Miembro',
                     icon: 'remove-circle',
                     handler: function () {
                         _this.navCtrl.push('GroupmembersPage');
                     }
                 },
                 {
-                    text: 'Group Info',
+                    text: 'Informacion De Grupo',
                     icon: 'person',
                     handler: function () {
                         _this.navCtrl.push('GroupinfoPage', { groupName: _this.groupName });
                     }
                 },
                 {
-                    text: 'Delete Group',
+                    text: 'Eliminar Grupo',
                     icon: 'trash',
                     handler: function () {
                         _this.groupservice.deletegroup().then(function () {
@@ -175,9 +175,9 @@ var GroupchatPage = (function () {
                     }
                 },
                 {
-                    text: 'Cancel',
-                    role: 'cancel',
-                    icon: 'cancel',
+                    text: 'Cancelar',
+                    role: 'cancelar',
+                    icon: 'cancelar',
                     handler: function () {
                         console.log('Cancelled');
                     }
@@ -189,7 +189,7 @@ var GroupchatPage = (function () {
     GroupchatPage.prototype.presentMemberSheet = function () {
         var _this = this;
         var sheet = this.actionSheet.create({
-            title: 'Group Actions',
+            title: 'Opciones De Grupo',
             buttons: [
                 {
                     text: 'Leave Group',
@@ -242,7 +242,7 @@ __decorate([
 ], GroupchatPage.prototype, "content", void 0);
 GroupchatPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-groupchat',template:/*ion-inline-start:"C:\proyecto\src\pages\groupchat\groupchat.html"*/'<!--\n\n  Generated template for the GroupchatPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="hcolor">\n\n    <ion-title>{{groupName}}</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="sendpicmsg()">\n\n        <ion-icon name="camera"></ion-icon>\n\n      </button>\n\n      <button *ngIf="owner" ion-button icon-only (click)="presentOwnerSheet()">\n\n        <ion-icon name="menu"></ion-icon>\n\n      </button>\n\n      <button *ngIf="!owner" ion-button icon-only (click)="presentMemberSheet()">\n\n        <ion-icon name="menu"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content #content>\n\n<div class = "chatwindow">\n\n  <ion-list no-lines>\n\n    <ion-item *ngFor = "let item of allgroupmsgs; let i = index" text-wrap>\n\n      <ion-avatar item-left *ngIf="item.sentby === alignuid">\n\n        <img src="{{photoURL}}">\n\n      </ion-avatar>\n\n      <div class="bubble me" *ngIf="item.sentby === alignuid">\n\n        <h6 style="color: mediumpurple;">{{item.displayName}}</h6>\n\n        <h3 *ngIf="!imgornot[i]">{{item.message}}</h3>\n\n        <img src="{{item.message}}" *ngIf="imgornot[i]">\n\n        <p><small>{{item.timestamp}}</small></p>\n\n      </div>\n\n      <ion-avatar item-right *ngIf="item.sentby != alignuid">\n\n        <img src="{{item.photoURL}}">\n\n      </ion-avatar>\n\n      <div class="bubble you" *ngIf="item.sentby != alignuid">\n\n        <h6 style="color: mediumvioletred;">{{item.displayName}}</h6>\n\n        <h3 *ngIf="!imgornot[i]">{{item.message}}</h3>\n\n        <img src="{{item.message}}" *ngIf="imgornot[i]">\n\n        <p><small>{{item.timestamp}}</small></p>\n\n      </div>\n\n    </ion-item>\n\n  </ion-list>\n\n</div>\n\n</ion-content>\n\n<ion-footer ion-fixed>    \n\n  <ion-toolbar class="no-border" color="white">        \n\n    <ion-input [(ngModel)]="newmessage" placeholder="Write your message ..."></ion-input>  \n\n    <ion-buttons end>\n\n      <button ion-button (click)="addgroupmsg()">\n\n        <ion-icon name="send" color="primary"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>    \n\n</ion-footer>\n\n'/*ion-inline-end:"C:\proyecto\src\pages\groupchat\groupchat.html"*/,
+        selector: 'page-groupchat',template:/*ion-inline-start:"C:\proyecto\src\pages\groupchat\groupchat.html"*/'<!--\n\n  Generated template for the GroupchatPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="hcolor">\n\n    <ion-title>{{groupName}}</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="sendpicmsg()">\n\n        <ion-icon name="camera"></ion-icon>\n\n      </button>\n\n      <button *ngIf="owner" ion-button icon-only (click)="presentOwnerSheet()">\n\n        <ion-icon name="menu"></ion-icon>\n\n      </button>\n\n      <button *ngIf="!owner" ion-button icon-only (click)="presentMemberSheet()">\n\n        <ion-icon name="menu"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content #content>\n\n<div class = "chatwindow">\n\n  <ion-list no-lines>\n\n    <ion-item *ngFor = "let item of allgroupmsgs; let i = index" text-wrap>\n\n      <ion-avatar item-left *ngIf="item.sentby === alignuid">\n\n        <img src="{{photoURL}}">\n\n      </ion-avatar>\n\n      <div class="bubble me" *ngIf="item.sentby === alignuid">\n\n        <h6 style="color: mediumpurple;">{{item.displayName}}</h6>\n\n        <h3 *ngIf="!imgornot[i]">{{item.message}}</h3>\n\n        <img src="{{item.message}}" *ngIf="imgornot[i]">\n\n        <p><small>{{item.timestamp}}</small></p>\n\n      </div>\n\n      <ion-avatar item-right *ngIf="item.sentby != alignuid">\n\n        <img src="{{item.photoURL}}">\n\n      </ion-avatar>\n\n      <div class="bubble you" *ngIf="item.sentby != alignuid">\n\n        <h6 style="color: mediumvioletred;">{{item.displayName}}</h6>\n\n        <h3 *ngIf="!imgornot[i]">{{item.message}}</h3>\n\n        <img src="{{item.message}}" *ngIf="imgornot[i]">\n\n        <p><small>{{item.timestamp}}</small></p>\n\n      </div>\n\n    </ion-item>\n\n  </ion-list>\n\n</div>\n\n</ion-content>\n\n<ion-footer ion-fixed>    \n\n  <ion-toolbar class="no-border" color="white">        \n\n    <ion-input [(ngModel)]="newmessage" placeholder="Escribe tu mensaje ..."></ion-input>  \n\n    <ion-buttons end>\n\n      <button ion-button (click)="addgroupmsg()">\n\n        <ion-icon name="send" color="primary"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>    \n\n</ion-footer>\n\n'/*ion-inline-end:"C:\proyecto\src\pages\groupchat\groupchat.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_groups_groups__["a" /* GroupsProvider */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */], __WEBPACK_IMPORTED_MODULE_3__providers_imghandler_imghandler__["a" /* ImghandlerProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */]])

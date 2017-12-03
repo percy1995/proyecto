@@ -140,7 +140,7 @@ export class GroupchatPage {
       title: 'Opciones De Grupo',
       buttons: [
         {
-          text: 'Leave Group',
+          text: 'Dejar grupo',
           icon: 'log-out',
           handler: () => {
             this.groupservice.leavegroup().then(() => {
@@ -151,7 +151,7 @@ export class GroupchatPage {
           }
         },
         {
-          text: 'Group Info',
+          text: 'Información del grupo',
           icon: 'person',
           handler: () => {
             this.navCtrl.push('GroupinfoPage', {groupName: this.groupName});

@@ -27,7 +27,7 @@ import { GroupsProvider } from '../providers/groups/groups';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp, {tabsPlacement: 'top'}),
+    IonicModule.forRoot(MyApp, {tabsPlacement: 'top' ,scrollAssist: false,autoFocusAssist: false }),
     AngularFireModule.initializeApp(config)
   ],
   bootstrap: [IonicApp],

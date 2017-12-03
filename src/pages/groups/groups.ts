@@ -20,7 +20,7 @@ export class GroupsPage {
 
   ionViewWillEnter() {
     let loader = this.loadingCtrl.create({
-      content: 'espero porfavor...'
+      content: 'Espere porfavor...'
     });
     loader.present();
     this.groupservice.getmygroups();

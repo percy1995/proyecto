@@ -1,6 +1,6 @@
 webpackJsonp([4],{
 
-/***/ 461:
+/***/ 464:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PasswordresetPageModule", function() { return PasswordresetPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__passwordreset__ = __webpack_require__(476);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__passwordreset__ = __webpack_require__(480);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -41,7 +41,7 @@ PasswordresetPageModule = __decorate([
 
 /***/ }),
 
-/***/ 476:
+/***/ 480:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98,7 +98,7 @@ var PasswordresetPage = (function () {
 }());
 PasswordresetPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-passwordreset',template:/*ion-inline-start:"C:\proyecto\src\pages\passwordreset\passwordreset.html"*/'<!--\n  Generated template for the PasswordresetPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n</ion-header>\n\n\n<ion-content class="background">\n<ion-card>\n  <ion-card-header>\n    Password Reset\n  </ion-card-header>\n  <ion-card-content>\n    <ion-list >\n      <ion-item>\n          <ion-input type="email" [(ngModel)]="email" placeholder="Email"></ion-input>\n      </ion-item>\n      <button ion-button block round outline color="light" (click)="reset()">Reset my Password</button>\n      <button ion-button full clear color="light" (click)="goback()">Go Back</button>\n    </ion-list>\n  </ion-card-content>\n</ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\proyecto\src\pages\passwordreset\passwordreset.html"*/,
+        selector: 'page-passwordreset',template:/*ion-inline-start:"C:\proyecto\src\pages\passwordreset\passwordreset.html"*/'<!--\n  Generated template for the PasswordresetPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n</ion-header>\n\n\n<ion-content class="background">\n<ion-card>\n  <ion-card-header>\n    Restablecer Contraseña\n  </ion-card-header>\n  <ion-card-content>\n    <ion-list >\n      <ion-item>\n          <ion-input type="email" [(ngModel)]="email" placeholder="Email"></ion-input>\n      </ion-item>\n      <button ion-button block round outline color="light" (click)="reset()">Restablecer mi Contraseña</button>\n      <button ion-button full clear color="light" (click)="goback()">Regresar</button>\n    </ion-list>\n  </ion-card-content>\n</ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\proyecto\src\pages\passwordreset\passwordreset.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_2__providers_user_user__["a" /* UserProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]])

@@ -227,31 +227,31 @@ var map = {
 		7
 	],
 	"../pages/login/login.module": [
-		464,
+		461,
 		6
 	],
 	"../pages/newgroup/newgroup.module": [
-		465,
+		462,
 		5
 	],
 	"../pages/passwordreset/passwordreset.module": [
-		461,
+		463,
 		4
 	],
 	"../pages/profile/profile.module": [
-		462,
+		464,
 		3
 	],
 	"../pages/profilepic/profilepic.module": [
-		463,
+		465,
 		2
 	],
 	"../pages/signup/signup.module": [
-		466,
+		467,
 		1
 	],
 	"../pages/tabs/tabs.module": [
-		467,
+		466,
 		0
 	]
 };
@@ -765,12 +765,12 @@ var RequestsProvider = (function () {
                     _this.deleterequest(buddy).then(function () {
                         resolve(true);
                     });
-                }).then(function (err) {
-                    reject(err);
-                });
-            }).then(function (err) {
-                reject(err);
-            });
+                }); /*.catch((err) => {
+                  reject(err);
+                 })*/
+            }); /*.catch((err) => {
+              reject(err);
+          })*/
         });
         return promise;
     };
@@ -786,7 +786,7 @@ var RequestsProvider = (function () {
                 });
             })
                 .then(function () {
-            }).then(function (err) {
+            }).catch(function (err) {
                 reject(err);
             });
         });
@@ -809,7 +809,7 @@ var RequestsProvider = (function () {
                         }
                     }
                 _this.events.publish('friends');
-            }).then(function (err) {
+            }).catch(function (err) {
                 alert(err);
             });
         });
@@ -876,9 +876,10 @@ var ChatProvider = (function () {
                         timestamp: __WEBPACK_IMPORTED_MODULE_1_firebase___default.a.database.ServerValue.TIMESTAMP
                     }).then(function () {
                         resolve(true);
-                    }).then(function (err) {
-                        reject(err);
                     });
+                    /*.catch((err) => {
+                      reject(err);
+                  })*/
                 });
             });
             return promise;
@@ -1034,7 +1035,7 @@ AppModule = __decorate([
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* MyApp */], { tabsPlacement: 'top' }, {
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* MyApp */], { tabsPlacement: 'top', scrollAssist: false, autoFocusAssist: false }, {
                 links: [
                     { loadChildren: '../pages/buddies/buddies.module#BuddiesPageModule', name: 'BuddiesPage', segment: 'buddies', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/buddychat/buddychat.module#BuddychatPageModule', name: 'BuddychatPage', segment: 'buddychat', priority: 'low', defaultHistory: [] },
@@ -1044,13 +1045,13 @@ AppModule = __decorate([
                     { loadChildren: '../pages/groupinfo/groupinfo.module#GroupinfoPageModule', name: 'GroupinfoPage', segment: 'groupinfo', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/groupmembers/groupmembers.module#GroupmembersPageModule', name: 'GroupmembersPage', segment: 'groupmembers', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/groups/groups.module#GroupsPageModule', name: 'GroupsPage', segment: 'groups', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/newgroup/newgroup.module#NewgroupPageModule', name: 'NewgroupPage', segment: 'newgroup', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/passwordreset/passwordreset.module#PasswordresetPageModule', name: 'PasswordresetPage', segment: 'passwordreset', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/profilepic/profilepic.module#ProfilepicPageModule', name: 'ProfilepicPage', segment: 'profilepic', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/newgroup/newgroup.module#NewgroupPageModule', name: 'NewgroupPage', segment: 'newgroup', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] }
+                    { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] }
                 ]
             }),
             __WEBPACK_IMPORTED_MODULE_10_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_8__app_firebaseconfig__["a" /* config */])

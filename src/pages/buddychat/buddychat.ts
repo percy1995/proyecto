@@ -63,7 +63,7 @@ export class BuddychatPage {
 
   sendPicMsg() {
     let loader = this.loadingCtrl.create({
-      content: 'Please wait'
+      content: 'Espere Porfavor ...'
     });
     loader.present();
     this.imgstore.picmsgstore().then((imgurl) => {

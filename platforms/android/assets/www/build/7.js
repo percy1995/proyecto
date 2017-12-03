@@ -78,7 +78,7 @@ var GroupsPage = (function () {
     GroupsPage.prototype.ionViewWillEnter = function () {
         var _this = this;
         var loader = this.loadingCtrl.create({
-            content: 'Getting your groups, Please wait...'
+            content: 'espero porfavor...'
         });
         loader.present();
         this.groupservice.getmygroups();
@@ -101,7 +101,7 @@ var GroupsPage = (function () {
 }());
 GroupsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-groups',template:/*ion-inline-start:"C:\proyecto\src\pages\groups\groups.html"*/'<!--\n\n  Generated template for the GroupsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="hcolor">\n\n    <ion-title>Groups</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="addgroup()">\n\n        <ion-icon name="contacts"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n<ion-list no-lines>\n\n  <ion-list-header>\n\n    My Groups\n\n  </ion-list-header>\n\n  <ion-item *ngFor="let item of allmygroups">\n\n    <ion-avatar item-left>\n\n      <img src="{{item.groupimage}}">\n\n    </ion-avatar>\n\n    <h3 (click)="openchat(item)">{{item.groupName}}</h3>\n\n  </ion-item>\n\n</ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\proyecto\src\pages\groups\groups.html"*/,
+        selector: 'page-groups',template:/*ion-inline-start:"C:\proyecto\src\pages\groups\groups.html"*/'<!--\n\n  Generated template for the GroupsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="hcolor">\n\n    <ion-title>Grupos</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="addgroup()">\n\n        <ion-icon name="contacts"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n<ion-list no-lines>\n\n  <ion-list-header>\n\n    Mis Grupos\n\n  </ion-list-header>\n\n  <ion-item *ngFor="let item of allmygroups">\n\n    <ion-avatar item-left>\n\n      <img src="{{item.groupimage}}">\n\n    </ion-avatar>\n\n    <h3 (click)="openchat(item)">{{item.groupName}}</h3>\n\n  </ion-item>\n\n</ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\proyecto\src\pages\groups\groups.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2__providers_groups_groups__["a" /* GroupsProvider */]])

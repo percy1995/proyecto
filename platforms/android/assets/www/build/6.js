@@ -1,6 +1,6 @@
 webpackJsonp([6],{
 
-/***/ 464:
+/***/ 461:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(479);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(476);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -41,7 +41,7 @@ LoginPageModule = __decorate([
 
 /***/ }),
 
-/***/ 479:
+/***/ 476:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -96,7 +96,7 @@ var LoginPage = (function () {
 }());
 LoginPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"C:\proyecto\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="background">\n\n  <ion-card>\n\n    <ion-card-header>\n\n      Login\n\n    </ion-card-header>\n\n    <ion-card-content>\n\n      <ion-list no-lines>\n\n        <div class="spacer" style="height: 10px;"></div>\n\n        <ion-item>\n\n          <ion-input type="email" placeholder="Email" [(ngModel)]="credentials.email"></ion-input>\n\n        </ion-item>\n\n        <div class="spacer" style="height: 5px;"></div>\n\n        <ion-item>\n\n          <ion-input type="password" placeholder="Password" [(ngModel)]="credentials.password"></ion-input>\n\n        </ion-item>\n\n        <div class="spacer" style="height: 10px;"></div>\n\n        <a (click)="passwordreset()">Forgot login details ? <b> Get Help </b></a>\n\n        <div class="spacer" style="height: 10px;"></div>\n\n        <button ion-button block round outline color="light" (click)="signin()">Login</button>\n\n        <div class="spacer" style="height: 10px;"></div>\n\n        <p>OR</p>\n\n        <div class="spacer" style="height: 10px;"></div>\n\n        <button ion-button clear full color="light" (click)="signup()">Don\'t have an account? Sign up</button>\n\n      </ion-list>\n\n    </ion-card-content>\n\n  </ion-card>\n\n  \n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\proyecto\src\pages\login\login.html"*/,
+        selector: 'page-login',template:/*ion-inline-start:"C:\proyecto\src\pages\login\login.html"*/'<ion-header>\n\n\n\n\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="background">\n\n\n\n           <ion-slides>             \n\n                <ion-slide style="background-image: url(\'assets/imgs/fondo1.jpg\')">\n\n                  <p>Bienvenido Inicia sesion o registrate</p>\n\n                  <p>------------></p>\n\n                  <br>\n\n                  <img src="assets/imgs/logo.png">\n\n                </ion-slide>\n\n        \n\n                <ion-slide style="background-image: url(\'assets/imgs/fondo1.jpg\')">\n\n                    <h1>Iniciar Sesion</h1>\n\n                    \n\n                     \n\n                      <table>\n\n                          <tr>\n\n                              <td>\n\n                                   \n\n                              </td><td>\n\n                                  Usuario: \n\n                              </td>\n\n                              <td>\n\n                                  <ion-input type="email" placeholder="Email" [(ngModel)]="credentials.email"></ion-input>\n\n                              </td>\n\n                          </tr>\n\n                          <tr>\n\n                              <td>\n\n                                   \n\n                              </td>\n\n                              <td>\n\n                                  Contraseña:\n\n                              </td>\n\n                              <td>\n\n                                  <ion-input type="password" placeholder="Password" [(ngModel)]="credentials.password"></ion-input>\n\n                                  \n\n                              </td>\n\n                          </tr>\n\n\n\n                      </table><br>\n\n\n\n                      <table  align="center">\n\n                            <tr>\n\n                              <td >\n\n                                  <button ion-button block round outline color="light" (click)="signin()">Iniciar Sesión</button><br>\n\n                                  <br>\n\n                              </td>\n\n                            </tr>\n\n                            <tr>\n\n                                <td >\n\n                                    <button ion-button clear full color="light" (click)="signup()">No tienes una cuenta? Regístrate</button>\n\n                                    \n\n                                </td>\n\n                            </tr>\n\n                            <tr>\n\n                                <td >\n\n                                    <button ion-button block round outline color="light" (click)="signup()">Registrate</button>\n\n                                </td>\n\n                            </tr>\n\n                      </table>\n\n                      \n\n                                     \n\n                    \n\n                </ion-slide>       \n\n        \n\n                <ion-slide style="background-image: url(\'assets/imgs/fondo1.jpg\')">\n\n                    <p>Chatea con tus amigos.</p>\n\n                    <br>\n\n                    <img src="assets/imgs/logo.png">\n\n                </ion-slide>\n\n\n\n            </ion-slides>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\proyecto\src\pages\login\login.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */]])
 ], LoginPage);

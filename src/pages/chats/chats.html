@@ -13,13 +13,13 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding style="background-image: url('assets/imgs/Fondo10.jpg');"> 
 <ion-list no-lines>
   <ion-list-header>
    solicitudes
   </ion-list-header>
   <ion-item-sliding *ngFor="let item of myrequests">
-    <ion-item>
+    <ion-item class="fondotransparente">
     <ion-avatar item-left>
       <img src="{{item.photoURL}}">
     </ion-avatar>
@@ -39,7 +39,7 @@
   <ion-list-header>
     Amigos
   </ion-list-header>
-  <ion-item *ngFor="let item of myfriends" (click)="buddychat(item)">
+  <ion-item *ngFor="let item of myfriends" (click)="buddychat(item)" class="fondotransparente">
     <ion-avatar item-left>
       <img src={{item.photoURL}}>
     </ion-avatar>

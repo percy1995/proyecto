@@ -50,8 +50,8 @@ export class ChatsPage {
     this.requestservice.acceptrequest(item).then(() => {
       
       let newalert = this.alertCtrl.create({
-        title: 'Friend added',
-        subTitle: 'Tap on the friend to chat with him',
+        title: 'Amigo agregado',
+        subTitle: 'Toca al amigo para chatear con él',
         buttons: ['Okay']
       });
       newalert.present();

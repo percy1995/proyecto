@@ -1,6 +1,6 @@
 webpackJsonp([3],{
 
-/***/ 462:
+/***/ 464:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfilePageModule", function() { return ProfilePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile__ = __webpack_require__(477);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile__ = __webpack_require__(479);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -41,7 +41,7 @@ ProfilePageModule = __decorate([
 
 /***/ }),
 
-/***/ 477:
+/***/ 479:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -102,7 +102,7 @@ var ProfilePage = (function () {
             _this.userservice.updateimage(url).then(function (res) {
                 if (res.success) {
                     statusalert.setTitle('Updated');
-                    statusalert.setSubTitle('Your profile pic has been changed successfully!!');
+                    statusalert.setSubTitle('tu perfil ha sido cambiado!!');
                     statusalert.present();
                     _this.zone.run(function () {
                         _this.avatar = url;
@@ -167,7 +167,7 @@ var ProfilePage = (function () {
 }());
 ProfilePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-profile',template:/*ion-inline-start:"C:\proyecto\src\pages\profile\profile.html"*/'<!--\n\n  Generated template for the ProfilePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="hcolor">\n\n    <ion-title>Profile</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n<div class="profile-image" (click)="editimage()">\n\n  <img src="{{avatar}}">\n\n</div>\n\n<div>\n\n  <h2 (click)="editname()">{{displayName}}</h2>\n\n</div>\n\n<div>\n\n  Tap on your pic or nick name to change it.\n\n</div>\n\n<div class="spacer" style="height: 10px;"></div>\n\n<div>\n\n  <button ion-button round outline color="danger" (click)="logout()">Logout</button>\n\n</div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\proyecto\src\pages\profile\profile.html"*/,
+        selector: 'page-profile',template:/*ion-inline-start:"C:\proyecto\src\pages\profile\profile.html"*/'<!--\n\n  Generated template for the ProfilePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="hcolor">\n\n    <ion-title>Perfil</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n<div class="profile-image" (click)="editimage()">\n\n  <img src="{{avatar}}">\n\n</div>\n\n<div>\n\n  <h2 (click)="editname()">{{displayName}}</h2>\n\n</div>\n\n<div>\n\nCambiar Foto\n\n</div>\n\n<div class="spacer" style="height: 10px;"></div>\n\n<div>\n\n  <button ion-button round outline color="danger" (click)="logout()">Logout</button>\n\n</div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\proyecto\src\pages\profile\profile.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
         __WEBPACK_IMPORTED_MODULE_3__providers_user_user__["a" /* UserProvider */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* NgZone */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],

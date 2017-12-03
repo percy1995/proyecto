@@ -54,8 +54,8 @@ export class BuddiesPage {
       alert('You are your friend always');
     else {
       let successalert = this.alertCtrl.create({
-        title: 'Request sent',
-        subTitle: 'Your request was sent to ' + recipient.displayName,
+        title: 'Solicitud enviada',
+        subTitle: 'Su solicitud fue enviada a ' + recipient.displayName,
         buttons: ['ok']
       });
     

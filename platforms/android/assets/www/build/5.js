@@ -1,14 +1,14 @@
 webpackJsonp([5],{
 
-/***/ 462:
+/***/ 465:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewgroupPageModule", function() { return NewgroupPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__newgroup__ = __webpack_require__(477);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__newgroup__ = __webpack_require__(481);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -41,15 +41,15 @@ NewgroupPageModule = __decorate([
 
 /***/ }),
 
-/***/ 477:
+/***/ 481:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewgroupPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_groups_groups__ = __webpack_require__(280);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_imghandler_imghandler__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_groups_groups__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_imghandler_imghandler__ = __webpack_require__(282);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -149,7 +149,7 @@ var NewgroupPage = (function () {
 }());
 NewgroupPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-newgroup',template:/*ion-inline-start:"C:\proyecto\src\pages\newgroup\newgroup.html"*/'<!--\n\n  Generated template for the NewgroupPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="hcolor">\n\n    <ion-title>Agregar nuevo Grupo</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n<div class="profile-image" (click)="chooseimage()">\n\n  <img src="{{newgroup.groupPic}}">\n\n</div>\n\n<div>\n\n  <h2 (click)="editgroupname()">{{newgroup.groupName}}</h2>\n\n</div>\n\n<div>\n\n  Toque la foto o el nombre del grupo para cambiarlo.\n\n</div>\n\n<div class="spacer" style="height: 10px;"></div>\n\n<div>\n\n  <button ion-button round outline (click)="creategroup()">Create</button>\n\n</div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\proyecto\src\pages\newgroup\newgroup.html"*/,
+        selector: 'page-newgroup',template:/*ion-inline-start:"C:\proyecto\src\pages\newgroup\newgroup.html"*/'<!--\n  Generated template for the NewgroupPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="hcolor">\n    <ion-title>Agregar nuevo Grupo</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n<div class="profile-image" (click)="chooseimage()">\n  <img src="{{newgroup.groupPic}}">\n</div>\n<div>\n  <h2 (click)="editgroupname()">{{newgroup.groupName}}</h2>\n</div>\n<div>\n  Toque la foto o el nombre del grupo para cambiarlo.\n</div>\n<div class="spacer" style="height: 10px;"></div>\n<div>\n  <button ion-button round outline (click)="creategroup()">Crear</button>\n</div>\n</ion-content>\n'/*ion-inline-end:"C:\proyecto\src\pages\newgroup\newgroup.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
         __WEBPACK_IMPORTED_MODULE_2__providers_groups_groups__["a" /* GroupsProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_imghandler_imghandler__["a" /* ImghandlerProvider */],

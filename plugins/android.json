@@ -30,6 +30,13 @@
     },
     "cordova-plugin-ionic-webview": {
       "PACKAGE_NAME": "Chat.Map"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.Chat.Map"
+    },
+    "cordova-plugin-googlemaps": {
+      "API_KEY_FOR_ANDROID": "AIzaSyBvIX0XRsxkIHwCd2botRas_TmPlG7tYBA",
+      "PACKAGE_NAME": "com.Chat.Map"
     }
   },
   "dependent_plugins": {}

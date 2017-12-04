@@ -1,14 +1,14 @@
 webpackJsonp([8],{
 
-/***/ 459:
+/***/ 461:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroupmembersPageModule", function() { return GroupmembersPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroupsPageModule", function() { return GroupsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__groupmembers__ = __webpack_require__(474);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__groups__ = __webpack_require__(477);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,37 +18,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var GroupmembersPageModule = (function () {
-    function GroupmembersPageModule() {
+var GroupsPageModule = (function () {
+    function GroupsPageModule() {
     }
-    return GroupmembersPageModule;
+    return GroupsPageModule;
 }());
-GroupmembersPageModule = __decorate([
+GroupsPageModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__groupmembers__["a" /* GroupmembersPage */],
+            __WEBPACK_IMPORTED_MODULE_2__groups__["a" /* GroupsPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__groupmembers__["a" /* GroupmembersPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__groups__["a" /* GroupsPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__groupmembers__["a" /* GroupmembersPage */]
+            __WEBPACK_IMPORTED_MODULE_2__groups__["a" /* GroupsPage */]
         ]
     })
-], GroupmembersPageModule);
+], GroupsPageModule);
 
-//# sourceMappingURL=groupmembers.module.js.map
+//# sourceMappingURL=groups.module.js.map
 
 /***/ }),
 
-/***/ 474:
+/***/ 477:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupmembersPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_groups_groups__ = __webpack_require__(280);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_groups_groups__ = __webpack_require__(281);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -62,59 +62,52 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the GroupmembersPage page.
+ * Generated class for the GroupsPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-var GroupmembersPage = (function () {
-    function GroupmembersPage(navCtrl, navParams, groupservice, events) {
+var GroupsPage = (function () {
+    function GroupsPage(navCtrl, navParams, events, loadingCtrl, groupservice) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.groupservice = groupservice;
         this.events = events;
+        this.loadingCtrl = loadingCtrl;
+        this.groupservice = groupservice;
     }
-    GroupmembersPage.prototype.ionViewWillEnter = function () {
+    GroupsPage.prototype.ionViewWillEnter = function () {
         var _this = this;
-        this.groupmembers = this.groupservice.currentgroup;
-        this.tempgrpmembers = this.groupmembers;
-        this.events.subscribe('gotintogroup', function () {
-            _this.groupmembers = _this.groupservice.currentgroup;
-            _this.tempgrpmembers = _this.groupmembers;
+        var loader = this.loadingCtrl.create({
+            content: 'Espere porfavor...'
+        });
+        loader.present();
+        this.groupservice.getmygroups();
+        loader.dismiss();
+        this.events.subscribe('newgroup', function () {
+            _this.allmygroups = _this.groupservice.mygroups;
         });
     };
-    GroupmembersPage.prototype.ionViewWillLeave = function () {
-        this.events.unsubscribe('gotintogroups');
+    GroupsPage.prototype.ionViewDidLeave = function () {
+        this.events.unsubscribe('newgroup');
     };
-    GroupmembersPage.prototype.searchuser = function (searchbar) {
-        var tempmembers = this.tempgrpmembers;
-        var q = searchbar.target.value;
-        if (q.trim() === '') {
-            this.groupmembers = this.tempgrpmembers;
-            return;
-        }
-        tempmembers = tempmembers.filter(function (v) {
-            if (v.displayName.toLowerCase().indexOf(q.toLowerCase()) > -1) {
-                return true;
-            }
-            return false;
-        });
-        this.groupmembers = tempmembers;
+    GroupsPage.prototype.addgroup = function () {
+        this.navCtrl.push('NewgroupPage');
     };
-    GroupmembersPage.prototype.removemember = function (member) {
-        this.groupservice.deletemember(member);
+    GroupsPage.prototype.openchat = function (group) {
+        this.groupservice.getintogroup(group.groupName);
+        this.navCtrl.push('GroupchatPage', { groupName: group.groupName });
     };
-    return GroupmembersPage;
+    return GroupsPage;
 }());
-GroupmembersPage = __decorate([
+GroupsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-groupmembers',template:/*ion-inline-start:"C:\proyecto\src\pages\groupmembers\groupmembers.html"*/'<!--\n\n  Generated template for the GroupmembersPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="hcolor">\n\n    <ion-title>Group Members</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n  <ion-searchbar [(ngModel)]="searchstring" (input)="searchuser($event)"\n\n                  placeholder="Search">\n\n  </ion-searchbar>\n\n<ion-list no-lines>\n\n  <ion-item-sliding *ngFor="let key of groupmembers">\n\n    <ion-item>\n\n      <ion-avatar item-left>\n\n        <img src="{{key.photoURL}}">\n\n      </ion-avatar>\n\n      <h2>{{key.displayName}}</h2>\n\n    </ion-item>\n\n    <ion-item-options slide="left">\n\n      <button ion-button color="danger" (click)="removemember(key)">\n\n        <ion-icon name="trash"></ion-icon>\n\n        Remove\n\n      </button>\n\n    </ion-item-options>\n\n  </ion-item-sliding>\n\n</ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\proyecto\src\pages\groupmembers\groupmembers.html"*/,
+        selector: 'page-groups',template:/*ion-inline-start:"C:\proyecto\src\pages\groups\groups.html"*/'<!--\n  Generated template for the GroupsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="hcolor">\n    <ion-title>Grupos</ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="addgroup()">\n        <ion-icon name="contacts"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content style="background-image: url(\'assets/imgs/Fondo10.jpg\');">\n<ion-list no-lines>\n  <ion-list-header>\n    Mis Grupos\n  </ion-list-header>\n  <ion-item *ngFor="let item of allmygroups" class="fondotransparente">\n    <ion-avatar item-left>\n      <img src="{{item.groupimage}}">\n    </ion-avatar>\n    <h3 (click)="openchat(item)">{{item.groupName}}</h3>\n  </ion-item>\n</ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\proyecto\src\pages\groups\groups.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_groups_groups__["a" /* GroupsProvider */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]])
-], GroupmembersPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2__providers_groups_groups__["a" /* GroupsProvider */]])
+], GroupsPage);
 
-//# sourceMappingURL=groupmembers.js.map
+//# sourceMappingURL=groups.js.map
 
 /***/ })
 

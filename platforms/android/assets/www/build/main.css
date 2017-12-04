@@ -27989,10 +27989,10 @@ page-buddychat .chat {
 }
 
 page-buddychat .bubble {
-  background-color: #F2F2F2;
+  background-color: #cdffcd;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 6px #B2B2B2;
-  box-shadow: 0 0 6px #B2B2B2;
+  -webkit-box-shadow: 0 0 6px #949494;
+  box-shadow: 0 0 6px #949494;
   display: inline-block;
   padding: 10px 18px;
   position: relative;
@@ -28000,7 +28000,7 @@ page-buddychat .bubble {
 }
 
 page-buddychat .bubble::before {
-  background-color: #F2F2F2;
+  background-color: #cdffcd;
   content: "\00a0";
   display: block;
   height: 16px;
@@ -28016,28 +28016,42 @@ page-buddychat .bubble::before {
 
 page-buddychat .me {
   float: left;
-  margin: 5px 45px 5px 20px;
+  margin: 0px 20px 0px 15px;
+  background-color: #b0d3fd;
 }
 
 page-buddychat .me::before {
-  -webkit-box-shadow: -2px 2px 2px 0 rgba(178, 178, 178, 0.4);
-  box-shadow: -2px 2px 2px 0 rgba(178, 178, 178, 0.4);
+  background-color: #b0d3fd;
   left: -9px;
 }
 
 page-buddychat .you {
   float: right;
-  margin: 5px 20px 5px 45px;
+  margin: 0px 15px 0px 20px;
 }
 
 page-buddychat .you::before {
-  -webkit-box-shadow: 2px -2px 2px 0 rgba(178, 178, 178, 0.4);
-  box-shadow: 2px -2px 2px 0 rgba(178, 178, 178, 0.4);
   right: -9px;
 }
 
 page-buddychat .chatwindow {
-  padding-bottom: 70px;
+  padding-bottom: 0 px;
+}
+
+page-buddychat .fondotransparente {
+  background-color: transparent;
+}
+
+page-buddychat .colorverde {
+  color: #04921c;
+}
+
+page-buddychat .colorazul {
+  color: #030c6e;
+}
+
+page-chats .fondotransparente {
+  background-color: transparent;
 }
 
 page-groupchat .chat {
@@ -28045,10 +28059,10 @@ page-groupchat .chat {
 }
 
 page-groupchat .bubble {
-  background-color: #F2F2F2;
+  background-color: #cdffcd;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 6px #B2B2B2;
-  box-shadow: 0 0 6px #B2B2B2;
+  -webkit-box-shadow: 0 0 6px #949494;
+  box-shadow: 0 0 6px #949494;
   display: inline-block;
   padding: 10px 18px;
   position: relative;
@@ -28056,7 +28070,7 @@ page-groupchat .bubble {
 }
 
 page-groupchat .bubble::before {
-  background-color: #F2F2F2;
+  background-color: #cdffcd;
   content: "\00a0";
   display: block;
   height: 16px;
@@ -28071,29 +28085,43 @@ page-groupchat .bubble::before {
 }
 
 page-groupchat .me {
-  float: left;
-  margin: 5px 45px 5px 20px;
+  float: right;
+  background-color: #b0d3fd;
+  margin: 0px 15px 0px 20px;
 }
 
 page-groupchat .me::before {
-  -webkit-box-shadow: -2px 2px 2px 0 rgba(178, 178, 178, 0.4);
-  box-shadow: -2px 2px 2px 0 rgba(178, 178, 178, 0.4);
-  left: -9px;
-}
-
-page-groupchat .you {
-  float: right;
-  margin: 5px 20px 5px 45px;
-}
-
-page-groupchat .you::before {
-  -webkit-box-shadow: 2px -2px 2px 0 rgba(178, 178, 178, 0.4);
-  box-shadow: 2px -2px 2px 0 rgba(178, 178, 178, 0.4);
+  background-color: #b0d3fd;
   right: -9px;
 }
 
+page-groupchat .you {
+  float: left;
+  margin: 0px 20px 0px 15px;
+}
+
+page-groupchat .you::before {
+  left: -9px;
+}
+
 page-groupchat .chatwindow {
-  padding-bottom: 70px;
+  padding-bottom: 0 px;
+}
+
+page-groupchat .fondotransparente {
+  background-color: transparent;
+}
+
+page-groupchat .colorverde {
+  color: #04921c;
+}
+
+page-groupchat .colorazul {
+  color: #030c6e;
+}
+
+page-groups .fondotransparente {
+  background-color: transparent;
 }
 
 page-login .background {
@@ -28177,6 +28205,12 @@ page-login .bottom {
 page-login .input-cover {
   position: -webkit-sticky;
   position: sticky;
+}
+
+page-home #map_canvas {
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
 page-newgroup .profile-image img {
@@ -28349,7 +28383,7 @@ page-profilepic .scroll-content {
 }
 
 page-signup .background {
-  background-image: url("../assets/imgs/2.jpg");
+  background-image: url("../assets/bgimage.jpg");
 }
 
 page-signup .scroll-content {

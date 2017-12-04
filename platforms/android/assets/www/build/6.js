@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 461:
+/***/ 464:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapsModule", function() { return MapsModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(476);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__maps__ = __webpack_require__(480);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,37 +18,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var LoginPageModule = (function () {
-    function LoginPageModule() {
+var MapsModule = (function () {
+    function MapsModule() {
     }
-    return LoginPageModule;
+    return MapsModule;
 }());
-LoginPageModule = __decorate([
+MapsModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */],
+            __WEBPACK_IMPORTED_MODULE_2__maps__["a" /* MapsPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__maps__["a" /* MapsPage */]),
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]
+            __WEBPACK_IMPORTED_MODULE_2__maps__["a" /* MapsPage */]
         ]
     })
-], LoginPageModule);
+], MapsModule);
 
-//# sourceMappingURL=login.module.js.map
+//# sourceMappingURL=maps.module.js.map
 
 /***/ }),
 
-/***/ 476:
+/***/ 480:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__ = __webpack_require__(286);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -61,47 +61,66 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-/**
- * Generated class for the LoginPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-var LoginPage = (function () {
-    function LoginPage(navCtrl, navParams, authservice) {
+var MapsPage = (function () {
+    function MapsPage(navCtrl, googleMaps) {
         this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.authservice = authservice;
-        this.credentials = {};
+        this.googleMaps = googleMaps;
     }
-    LoginPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad LoginPage');
+    MapsPage.prototype.ionViewDidLoad = function () {
+        this.loadMap();
     };
-    LoginPage.prototype.signin = function () {
+    MapsPage.prototype.loadMap = function () {
         var _this = this;
-        this.authservice.login(this.credentials).then(function (res) {
-            if (!res.code)
-                _this.navCtrl.setRoot('TabsPage');
-            else
-                alert(res);
+        var mapOptions = {
+            camera: {
+                target: {
+                    lat: 43.0741904,
+                    lng: -89.3809802 // default location
+                },
+                zoom: 18,
+                tilt: 30
+            }
+        };
+        this.map = this.googleMaps.create('map_canvas', mapOptions);
+        // Wait the MAP_READY before using any methods.
+        this.map.one(__WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__["b" /* GoogleMapsEvent */].MAP_READY)
+            .then(function () {
+            // Now you can use all methods safely.
+            _this.getPosition();
+        })
+            .catch(function (error) {
+            console.log(error);
         });
     };
-    LoginPage.prototype.signup = function () {
-        this.navCtrl.push('SignupPage');
+    MapsPage.prototype.getPosition = function () {
+        var _this = this;
+        this.map.getMyLocation()
+            .then(function (response) {
+            _this.map.moveCamera({
+                target: response.latLng
+            });
+            _this.map.addMarker({
+                title: 'My Position',
+                icon: 'blue',
+                animation: 'DROP',
+                position: response.latLng
+            });
+        })
+            .catch(function (error) {
+            console.log(error);
+        });
     };
-    LoginPage.prototype.passwordreset = function () {
-        this.navCtrl.push('PasswordresetPage');
-    };
-    return LoginPage;
+    return MapsPage;
 }());
-LoginPage = __decorate([
+MapsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"C:\proyecto\src\pages\login\login.html"*/'<ion-header>\n\n\n\n\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="background">\n\n\n\n           <ion-slides>             \n\n                <ion-slide style="background-image: url(\'assets/imgs/fondo1.jpg\')">\n\n                  <p>Bienvenido Inicia sesion o registrate</p>\n\n                  <p>------------></p>\n\n                  <br>\n\n                  <img src="assets/imgs/logo.png">\n\n                </ion-slide>\n\n        \n\n                <ion-slide style="background-image: url(\'assets/imgs/fondo1.jpg\')">\n\n                    <h1>Iniciar Sesion</h1>\n\n                    \n\n                     \n\n                      <table>\n\n                          <tr>\n\n                              <td>\n\n                                   \n\n                              </td><td>\n\n                                  Usuario: \n\n                              </td>\n\n                              <td>\n\n                                  <ion-input type="email" placeholder="Email" [(ngModel)]="credentials.email"></ion-input>\n\n                              </td>\n\n                          </tr>\n\n                          <tr>\n\n                              <td>\n\n                                   \n\n                              </td>\n\n                              <td>\n\n                                  Contraseña:\n\n                              </td>\n\n                              <td>\n\n                                  <ion-input type="password" placeholder="Password" [(ngModel)]="credentials.password"></ion-input>\n\n                                  \n\n                              </td>\n\n                          </tr>\n\n\n\n                      </table><br>\n\n\n\n                      <table  align="center">\n\n                            <tr>\n\n                              <td >\n\n                                  <button ion-button block round outline color="light" (click)="signin()">Iniciar Sesión</button><br>\n\n                                  <br>\n\n                              </td>\n\n                            </tr>\n\n                            <tr>\n\n                                <td >\n\n                                    <button ion-button clear full color="light" (click)="signup()">No tienes una cuenta? Regístrate</button>\n\n                                    \n\n                                </td>\n\n                            </tr>\n\n                            <tr>\n\n                                <td >\n\n                                    <button ion-button block round outline color="light" (click)="signup()">Registrate</button>\n\n                                </td>\n\n                            </tr>\n\n                      </table>\n\n                      \n\n                                     \n\n                    \n\n                </ion-slide>       \n\n        \n\n                <ion-slide style="background-image: url(\'assets/imgs/fondo1.jpg\')">\n\n                    <p>Chatea con tus amigos.</p>\n\n                    <br>\n\n                    <img src="assets/imgs/logo.png">\n\n                </ion-slide>\n\n\n\n            </ion-slides>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\proyecto\src\pages\login\login.html"*/,
+        selector: 'page-maps',template:/*ion-inline-start:"C:\proyecto\src\pages\maps\maps.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>\n      Demo 111\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <div id="map_canvas"></div>\n</ion-content>\n'/*ion-inline-end:"C:\proyecto\src\pages\maps\maps.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */]])
-], LoginPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+        __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__["a" /* GoogleMaps */]])
+], MapsPage);
 
-//# sourceMappingURL=login.js.map
+//# sourceMappingURL=maps.js.map
 
 /***/ })
 

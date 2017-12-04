@@ -19,7 +19,13 @@ import { ImghandlerProvider } from '../providers/imghandler/imghandler';
 import { RequestsProvider } from '../providers/requests/requests';
 import { ChatProvider } from '../providers/chat/chat';
 import { GroupsProvider } from '../providers/groups/groups';
-
+import { Geolocation } from '@ionic-native/geolocation';
+import {
+  GoogleMaps,
+  
+  MarkerOptions,
+  Marker
+ } from '@ionic-native/google-maps';
 
 @NgModule({
   declarations: [
@@ -42,6 +48,8 @@ import { GroupsProvider } from '../providers/groups/groups';
     FileChooser,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
+    Geolocation,
+    GoogleMaps,
     AngularFireAuth,
     UserProvider,
     ImghandlerProvider,

@@ -28207,6 +28207,12 @@ page-login .input-cover {
   position: sticky;
 }
 
+page-home #map_canvas {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
 page-newgroup .profile-image img {
   height: 200px;
   width: 200px;
